@@ -1,0 +1,32 @@
+.dashboard-screen{
+    padding: 2px 2px;
+}
+
+.custom-thead{
+    background-color: rgb(5, 5, 54);
+    color: rgb(224, 222, 222);
+}
+
+.dashboard-screen .recent-purchase-order{
+    margin-bottom: 10px;
+}
+
+.dashboard-screen .recent-purchase-order h4{
+    color: rgb(6, 6, 53);
+    font-weight: 700;
+}
+
+.dashboard-screen .recent-purchase-order .purchase-orders-table{
+    overflow-x: scroll;
+}
+
+
+.dashboard-screen .recent-sell-order h4{
+    color: rgb(6, 6, 53);
+    font-weight: 700;
+}
+
+
+.dashboard-screen .recent-sell-order .sell-orders-table{
+    overflow-x: scroll;
+}

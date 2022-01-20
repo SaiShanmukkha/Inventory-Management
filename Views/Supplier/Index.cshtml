@@ -1,0 +1,97 @@
+﻿@{
+    Layout = "_mainLayout";
+    ViewData["Title"] = "Suppliers";
+}
+
+
+@section Styles{
+<link rel="stylesheet" href="~/css/Supplier/Supplier.css" />
+}
+
+@*<div class="Supplier-stat-block">
+    <h2>Suppliers Overview</h2>
+    <div class="stat-overview">
+        <div class="stat-block">
+            <div class="stat-title">
+                Total Suppliers
+            </div>
+            <div class="stat-data">
+                2345234
+            </div>
+        </div>
+        <div class="stat-block">
+            <div class="stat-title">
+                In Suppliers
+            </div>
+            <div class="stat-data">
+                2345234
+            </div>
+        </div>
+        <div class="stat-block">
+            <div class="stat-title">
+                Low Suppliers
+            </div>
+            <div class="stat-data">
+                2345234
+            </div>
+        </div>
+        <div class="stat-block">
+            <div class="stat-title">
+                No Suppliers
+            </div>
+            <div class="stat-data">
+                2345234
+            </div>
+        </div>
+    </div>
+</div>*@
+
+<div class="management-actions">
+    <a class="btn btn-primary" asp-controller="Supplier" asp-action="Create">Add Supplier</a>    
+    <button class="btn btn-info">View Favorite Supplier</button>  
+</div>
+
+<div class="Supplier-list-block">
+    <h2>Suppliers List</h2>
+    <div class="Suppliers-table-block">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Country</th>
+                    <th>Last Update</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(Supplier Supplier in ViewBag.Suppliers){
+                <tr>
+                    <td>@Supplier.SupplierId</td>
+                    <td>@Supplier.SupplierName</td>
+                    <td>@Supplier.SupplierEmail</td>
+                    <td>@Supplier.SupplierPhone</td>
+                    <td>@Supplier.SupplierCountry</td>
+                    <td>@Supplier.SupplierDataLastUpdate</td>
+                    <td>
+                        <div class="action-buttons">
+                            <a class="btn" asp-controller="Supplier" asp-action="Details" asp-route-id="@Supplier.SupplierId"><span class="material-icons favortite-icon text-info" title="View More">visibility</span></a>
+                            <a class="btn" asp-controller="Supplier" asp-action="Update" asp-route-id="@Supplier.SupplierId"><span class="material-icons update-icon text-primary" title="Edit">edit</span></a>
+                        </div>
+                    </td>
+                </tr>
+                }                
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+@section Scripts{
+<script src="~/js/Supplier/Supplier.js"></script>
+}

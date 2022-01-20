@@ -1,0 +1,70 @@
+﻿@model CloudCart.Models.Supplier
+
+@{
+    Layout = "_mainLayout";
+    ViewData["Title"] = "Create-Supplier";
+}
+
+<div class="create-Supplier-block">
+    <h4>Create - Supplier</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="SupplierName" class="control-label"></label>
+                    <input asp-for="SupplierName" class="form-control" />
+                    <span asp-validation-for="SupplierName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SupplierIndustry" class="control-label"></label>
+                    <input asp-for="SupplierIndustry" class="form-control" />
+                    <span asp-validation-for="SupplierIndustry" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SupplierEmail" class="control-label"></label>
+                    <input asp-for="SupplierEmail" class="form-control" />
+                    <span asp-validation-for="SupplierEmail" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SupplierPhone" class="control-label"></label>
+                    <input asp-for="SupplierPhone" class="form-control" />
+                    <span asp-validation-for="SupplierPhone" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SupplierAddress" class="control-label"></label>
+                    <input asp-for="SupplierAddress" class="form-control" />
+                    <span asp-validation-for="SupplierAddress" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SupplierCity" class="control-label"></label>
+                    <input asp-for="SupplierCity" class="form-control" />
+                    <span asp-validation-for="SupplierCity" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SupplierProvince" class="control-label"></label>
+                    <input asp-for="SupplierProvince" class="form-control" />
+                    <span asp-validation-for="SupplierProvince" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SupplierCountry" class="control-label"></label>
+                    <input asp-for="SupplierCountry" class="form-control" />
+                    <span asp-validation-for="SupplierCountry" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SupplierPinCode" class="control-label"></label>
+                    <input asp-for="SupplierPinCode" class="form-control" />
+                    <span asp-validation-for="SupplierPinCode" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                    <a class="btn btn-info" asp-action="Index">Back</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

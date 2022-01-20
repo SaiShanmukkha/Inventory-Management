@@ -1,0 +1,106 @@
+﻿.sell-screen {
+    padding: 10px 10px;
+    overflow-x: scroll;
+    background-color: rgb(196, 194, 199);
+}
+
+.sell-screen h4{
+    color: rgb(8, 8, 187);
+    font-weight: 900;
+}
+
+
+.sell-screen .Entry-select-block{
+    
+    white-space: nowrap;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.Entry-select-block .input-block{
+    padding: 10px;
+    justify-items: start;
+    margin: 3px;
+    height: 100px;
+    width: 300px;
+}
+
+
+.Entry-select-block .input-block .label-block{
+    font-weight: 900;
+    font-size: 22px;
+    color: rgb(5, 5, 100);
+}
+
+.Entry-select-block .input-block .input-block-entry{
+    width: 100%;
+    padding: 4px;
+    border: 2px solid rgb(3, 3, 95);
+    font-weight: 500;
+    text-align: center;
+}
+
+.actions-block button{
+    color: #fff;
+    background-color: rgb(9, 9, 58);
+    padding: 5px;
+    border: 0px solid rgb(9, 9, 66);
+    margin: 5px;
+}
+
+
+.actions-block button:active{
+    background-color: rgb(50, 18, 194);
+}
+
+
+
+.sell-cart-view {
+    min-height: 120px;
+}
+
+.sell-cart-view h4{
+    font-weight: 600;
+    color: rgb(7, 7, 114);
+}
+
+.sell-cart-view p{
+    font-weight: 600;
+    font-size: 20px;
+    text-align: center;
+}
+
+.sell-actions h4{
+    font-weight: 600;
+    color: rgb(6, 6, 105);
+}
+
+
+.cart-table{
+    overflow-x: scroll;
+}
+
+.cart-table table td, th{
+    border: 2px solid white;
+}
+
+.cart-table thead{
+    background-color: rgb(6, 6, 77);
+    color: white;
+}
+
+.cart-table tbody tr{
+    background-color: rgb(35, 33, 53);
+    color: white;
+}
+
+
+#confirm-sell{
+    background-color: rgb(16, 16, 78);
+    color: white;
+}
+
+#confirm-sell:hover{
+    background-color: blue;
+}

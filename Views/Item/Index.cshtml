@@ -1,0 +1,171 @@
+﻿@{
+    Layout = "_mainLayout";
+    ViewData["Title"] = "Items";
+}
+
+@section Styles{
+<link rel="stylesheet" href="~/css/Item/item.css" />
+}
+
+<div class="Item-content">
+    @* Stst-Overview *@
+    @*<div>
+        <h2>Item Stats</h2>
+        <div class="stat-overview">
+            <div class="stat-block">
+                <div class="stat-title">
+                    Total Items
+                </div>
+                <div class="stat-data">
+                    2345234
+                </div>
+            </div>
+            <div class="stat-block">
+                <div class="stat-title">
+                    In Stocks
+                </div>
+                <div class="stat-data">
+                    2345234
+                </div>
+            </div>
+            <div class="stat-block">
+                <div class="stat-title">
+                    New Items
+                </div>
+                <div class="stat-data">
+                    2345234
+                </div>
+            </div>
+            <div class="stat-block">
+                <div class="stat-title">
+                    Total Stocks
+                </div>
+                <div class="stat-data">
+                    2345234
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+    <!-- Add Items Action-->
+    <div class="add-item-action">
+        <button type="button" id="Add-item-modal-call" class="btn btn-primary" data-toggle="modal"
+            data-target="#addItemModal">Add Item</button>
+        <button class="btn btn-info">View Favorite Items</button>
+    </div>
+
+
+    <h2>Item List</h2>
+    <div class="items-table-block">
+        <table class="items-table">
+            <thead class="items-table-thead">
+                <tr>
+                    <th style="width: 20px;">Item Id</th>
+                    <th style="width: 150px;">Name</th>
+                    <th style="width: 80px;">Price($)</th>
+                    <th style="width: 300px;">Last Update</th>
+                    <th style="width: 200px;">Actions</th>
+                </tr>
+            </thead>
+            <tbody class="items-table-tbody">
+                @foreach (Item item in ViewBag.Items)
+                {
+                    <tr>
+                        <td>@item.ItemId</td>
+                        <td>@item.ItemName</td>
+                        <td>@item.ItemPrice</td>
+                        <td>@item.ItemLastUpdate</td>
+                        <td>
+                            <div class="action-buttons">
+                                <button class="btn" id="favoriteItembtn"><span class="material-icons favortite-icon" title="Make Favorite">favorite_border</span></button>
+                                <button class="btn" onclick="return viewUpdateModal([@item.ItemId, `@item.ItemName`, @item.ItemPrice]);"><span class="material-icons update-icon text-info" title="Edit">edit</span></button>
+                                <button class="btn" onclick="return deleteItemCall([@item.ItemId, `@item.ItemName`]);" ><span class="material-icons delete-icon text-danger" title="Delete">delete</span></button>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<!-- Modal For Adding Item -->
+
+<!-- Modal -->
+<div class="modal fade" id="addItemModal" tabindex="-1" role="dialog" aria-labelledby="addItemModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addItemModalLabel">Add Item</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="ItemName">Item Name(*)&emsp;</label>
+                        <input type="text" id="ItemName" name="ItemName" required />
+                        <span id="itemNameEr" style="color: red;">*Item Name Required</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="ItemPrice">Item Price(*)&emsp;</label>
+                        <input type="number" id="ItemPrice" name="ItemPrice" required />
+                        <span id="itemPriceEr" style="color: red;">*Enter Valid Item Price</span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" id="AddItem-form-Submit" class="btn btn-success">Add Item</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal for Updating item and Deleting item -->
+<div class="modal fade" id="updateItemModal" tabindex="-1" role="dialog" aria-labelledby="updateItemModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="updateItemModalLabel">Update Item</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <input id="UpdateItemID" hidden/>
+                    <div class="form-group row">
+                        <label for="UpdateItemName" class="col-sm-2 col-form-label">Item Name(*)</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="UpdateItemName" name="UpdateItemName" placeholder="Item Name">
+                            <span id="updateItemNameEr" style="color: red;">*Item Name Required</span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="UpdateItemPrice" class="col-sm-2 col-form-label">Item Price</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="UpdateItemPrice" name="UpdateItemPrice" placeholder="Item Price">
+                            <span id="updateItemPriceEr" style="color: red;">*Enter Valid Item Price</span>
+                        </div>
+                    </div>    
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+                <button type="button" onclick="return UpdateItemCall();" class="btn btn-success">Update Item</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts{
+<script src="~/js/Item/item.js"></script>
+}

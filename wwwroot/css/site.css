@@ -1,0 +1,204 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto,'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+}
+
+/*Sidebar Styling*/
+
+.sidebar {
+    position: fixed;
+    height: 100%;
+    width: 200px;
+    background-color: rgb(5, 5, 54);
+}
+
+    .sidebar.minion {
+        width: 60px;
+    }
+
+    .sidebar .logo-details {
+        color: yellow;
+        height: 80px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+        .sidebar .logo-details .icon {
+            font-size: 20px;
+            font-weight: 500;
+            color: yellow;
+            min-width: 60px;
+            text-align: center;
+        }
+
+        .sidebar .logo-details .logo-name {
+            font-size: 22px;
+            font-weight: 900;
+            color: yellow;
+            margin-left: 8px;
+        }
+
+            .sidebar.minion .logo-details .logo-name{
+                opacity:0;
+            }
+
+            .sidebar .nav-items {
+                margin-top: 16px;
+            }
+
+        .sidebar .nav-items li {
+            height: 40px;
+            width: 100%;
+            list-style: none;
+        }
+
+            .sidebar .nav-items li a {
+                height: 100%;
+                width: 100%;
+                display: flex;
+                color: #fff;
+                align-items: center;
+                border-radius: 12px;
+                text-decoration: none;
+                transition: 0.1s;
+            }
+
+                .sidebar .nav-items li a:hover {
+                    background-color: white;
+                    color: black;
+                    transition: 0.1s;
+                }
+
+                .sidebar .nav-items li a .icon {
+                    min-width: 60px;
+                    text-align: center;
+                    font-size: 16px;
+                }
+
+
+                .sidebar .nav-items li a .link-name {
+                    font-size: 13px;
+                    font-weight: 400;
+                    white-space: nowrap;
+                }
+
+/* Main-Screen */
+
+.main-section {
+    background-color: rgb(228, 224, 224);
+    position: relative;
+    min-height: 100vh;
+    max-width: calc(100% - 200px);
+    left: 200px;
+    transition: 0.5s;
+    overflow-x: scroll;
+}
+
+.sidebar.minion ~ .main-section {
+    max-width: calc(100% - 60px);
+    left: 60px;
+}
+
+.main-section nav {
+    width:100%;
+    height: 50px;
+    background-color: rgb(170, 168, 168);
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+    .main-section nav .sidebar-button {
+        display: flex;
+        align-items: center;
+        font-size: 18px;
+        font-weight: 800;
+    }
+
+        .main-section nav .sidebar-button .icon {
+            font-size: 28px;
+            margin-right: 10px;
+            max-width: 30px;
+            color: rgb(5, 5, 54);
+            cursor: pointer;
+        }
+
+        .main-section nav .sidebar-button .screen-name {
+            white-space: nowrap;
+        }
+
+    .main-section nav .search-box {
+        height: 50px;
+        width: 300px;
+        min-width: 80px;
+        margin: 0 20px;
+        position: relative;
+        display:none;
+    }
+
+        .main-section nav .search-box input {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            padding: 0px 15px;
+            border-radius: 6px;
+            font-size: 15px;
+            background-color: rgb(203, 201, 206);
+            border: 2px solid black;
+            outline: none;
+        }
+
+
+        .main-section nav .search-box .nav-search {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgb(5, 5, 54);
+            color: #fff;
+            height: 40px;
+            width: 40px;
+            font-size: 20px;
+            line-height: 40px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+    .main-section nav .profile-details {
+        display: flex;
+        align-items: center;
+        min-width: 50px;
+        height: 50px;
+        background: rgb(204, 198, 198);
+        border: 2px solid rgb(165, 162, 162);
+    }
+
+        .main-section nav .profile-details img {
+            height: 40px;
+            width: 40px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .main-section nav .profile-details .profile-menu-icon {
+            cursor: pointer;
+        }
+
+
+/* Main-section Main-content */
+.main-section .main-content {
+    position: relative;
+    padding: 5px;
+}

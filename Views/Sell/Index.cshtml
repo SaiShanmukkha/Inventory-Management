@@ -1,0 +1,107 @@
+﻿@{
+    Layout = "_mainLayout";
+    ViewData["Title"] = "Sell Order";
+}
+
+@section Styles{
+    <link rel="stylesheet" href="~/css/Sell/sell.css" />
+}
+
+<div class="sell-screen">
+    <h4>Sell Order Entry</h4>
+    
+    <div class="Entry-select-block">
+        <div class="input-block">
+            <div class="label-block"><label for="SellDate" class="input-block-label">Sell Date</label></div>
+            <input id="SellDate" class="input-block-entry" value="@DateTime.Now" readonly />
+        </div>
+        <div class="input-block">
+            <div class="label-block">
+                <label for="SellInvoiceNumber" class="input-block-label">Invoice Number</label>
+            </div>
+            <input id="SellInvoiceNumber" class="input-block-entry" readonly />
+        </div>
+        <div class="input-block">
+            <div class="label-block">
+                <label for="SellCourierCharge" class="input-block-label">Carrier Charge</label>
+            </div>
+            <input id="SellCourierCharge" class="input-block-entry" value="100.0" readonly />
+        </div>
+        <div class="input-block">
+            <div class="label-block">
+                <label for="CustomerName" class="input-block-label">Customer Name</label>
+            </div>
+            <input id="CustomerName" type="text" class="input-block-entry" required placeholder="Customer Name..." />
+            </div>
+        <div class="input-block">
+            <div class="label-block">
+                <label for="CustomerPhone" class="input-block-label">Phone Number</label>
+            </div>
+            <input id="CustomerPhone" min="1000000000" max="9999999999" type="number" maxlength="10" class="input-block-entry" required placeholder="Customer Phone Number" />
+            </div>
+        <div class="input-block">
+            <div class="label-block">
+                <label for="CustomerEmail" class="input-block-label">Customer Email</label>
+            </div>
+            <input id="CustomerEmail" type="email" class="input-block-entry" required placeholder="Customer Email..." />
+        </div>
+
+        <div class="input-block">
+            <div class="label-block"><label for="ItemName" class="input-block-label">Item Name</label></div>
+            <select id="ItemName" class="input-block-entry">
+                <option selected hidden value="null">---selected---</option>
+            </select>
+        </div>
+
+        <div class="input-block">
+            <div class="label-block"><label for="ItemStock" class="input-block-label">Stock Available</label></div>
+            <input type="number" id="ItemStock" class="input-block-entry" value="" readonly />
+        </div>
+
+        <div class="input-block">
+            <div class="label-block"><label for="Itemprice" class="input-block-label">Item price</label></div>
+            <input type="number" id="ItemPrice" class="input-block-entry" value="0" readonly />
+        </div>
+
+        <div class="input-block">
+            <div class="label-block"><label for="ItemQuantity" class="input-block-label">Item Quantity</label></div>
+            <input type="number" id="ItemQuantity" class="input-block-entry" value="0" min="0" />
+        </div>
+
+        <div class="input-block">
+            <div class="label-block">
+                <label for="ItemTotalPrice" class="input-block-label">Item Total Price</label>
+            </div>
+            <input type="number" id="ItemTotalPrice" class="input-block-entry" value="0" readonly />
+        </div>
+
+        <div class="input-block">
+            <div class="label-block">
+                <label for="sellTotalPrice" class="input-block-label">Grand Total Items Price</label>
+            </div>
+            <input type="number" id="sellTotalPrice" name="sellTotalPrice" class="input-block-entry" value="" readonly />
+        </div>
+    </div>
+    <div class="actions-block">
+        <button onclick="addToCartCall();" class="btn btn-primary">Add to Cart</button>
+        <button onclick="emptyCartCall();" class="btn btn-primary">Empty Cart</button>
+    </div>
+</div>
+
+
+<div class="sell-cart-view">
+    <h4>Cart Data</h4>
+    <div class="cart-table">
+    </div>
+</div>
+
+
+<div class="sell-actions">
+    <h4>Sell Order Actions</h4>
+    <button id="confirm-sell" class="btn btn-primary">Confirm sell</button>
+</div>
+
+@section Scripts{
+    <script src="~/js/Sell/sell.js"></script>
+}
+

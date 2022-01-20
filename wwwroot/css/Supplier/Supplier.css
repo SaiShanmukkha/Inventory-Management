@@ -1,0 +1,114 @@
+﻿/* Common - styles */
+h2{
+    color: rgb(13, 13, 185);
+    font-weight: 900;
+    padding-left: 10px;    
+}
+
+
+/* Supplier -stats Overview stlying */
+
+.stat-overview{
+    background-color: rgb(236, 232, 232);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+
+.stat-block{
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 10px;    
+    margin: 10px;
+    text-align: center;  
+    justify-content: center;
+    border-radius: 12px;
+}
+
+@media only screen and (max-width: 600px) {
+    .stat-block{
+        width: calc(100% - 40px);
+        overflow-x: hidden;
+    }
+}
+
+@media only screen and (max-width: 1078px) and (min-width: 600px){
+    .stat-block{
+        width: calc(100%/2 - 40px);
+        overflow-x: hidden;
+    }
+}
+
+@media only screen and (min-width: 1078px){
+    .stat-block{
+        width: calc(100%/4 - 80px);
+        overflow-x: hidden;
+    }
+}
+
+.stat-title{
+    margin: 20px;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.stat-data{
+    color: black;
+    margin: 10px;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+/* Action for Suppliers */
+.management-actions{
+    display: inline-block;
+    margin: 20px 5px;
+}
+
+.management-actions button{
+    margin: 5px;
+}
+
+/* Suppliers table */
+
+
+.Supplier-list-block .Suppliers-table-block{
+    overflow: scroll;
+    max-width: 1900px;
+}
+
+.Supplier-list-block .Suppliers-table-block table thead th{
+    background-color: rgb(8, 8, 53);
+    color: #fff;
+    font-size: medium;
+    font-weight: 900;
+}
+
+.Supplier-list-block .Suppliers-table-block table tbody tr{
+    background-color: rgb(55, 55, 66);
+    color: white;
+}
+
+.Supplier-list-block .Suppliers-table-block .table-bordered{    
+    border: 2px solid black !important;
+}
+
+.Supplier-list-block .Suppliers-table-block .table .action-buttons{
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+
+.Supplier-list-block .Suppliers-table-block .table .action-buttons a:hover{
+    background-color: rgb(187, 187, 185);
+    transition: 0.5s;
+}
+
+
+.Supplier-list-block .Suppliers-table-block .table .action-buttons a .material-icons{
+    min-width: 30px;
+}
+

@@ -1,0 +1,19 @@
+﻿@{
+    Layout = "_mainLayout";
+    ViewData["Title"] = "Order Status";
+}
+
+
+<h2>Order Status:</h2>
+
+@if (ViewBag.sellOrderId > 0)
+{
+
+
+    <p>Confirmed</p>
+}
+else
+{
+    <p>Failed to put Order</p>
+}
+

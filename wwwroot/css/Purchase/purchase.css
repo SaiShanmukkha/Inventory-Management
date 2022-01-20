@@ -1,0 +1,106 @@
+﻿.purchase-screen {
+    padding: 10px 10px;
+    background-color:  rgb(173, 168, 168);
+    overflow-x: scroll;
+}
+
+.purchase-screen h4{
+    color: rgb(6, 6, 59);
+    font-weight: 800;
+}
+
+
+.purchase-screen .Entry-select-block{
+    /* background-color: green; */
+    white-space: nowrap;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.Entry-select-block .input-block{
+    /* background-color: yellow; */
+    padding: 10px;
+    justify-items: start;
+    margin: 3px;
+    height: 100px;
+    width: 300px;
+}
+
+
+.Entry-select-block .input-block .label-block{
+    font-weight: 900;
+    font-size: 22px;
+    color: rgb(6, 6, 53);
+}
+
+.Entry-select-block .input-block .input-block-entry{
+    width: 100%;
+    padding: 4px;
+    border: 3px solid rgb(6, 6, 53);
+    font-weight: 500;
+    text-align: center;
+}
+
+.actions-block button{
+    color: #fff;
+    background-color: rgb(9, 9, 58);
+    padding: 5px;
+    border: 0px solid rgb(9, 9, 66);
+    margin: 5px;
+}
+
+
+.actions-block button:active{
+    background-color: rgb(50, 18, 194);
+}
+
+
+
+.purchase-cart-view {
+    min-height: 120px;
+}
+
+.purchase-cart-view h4{
+    font-weight: 900;
+    color: rgb(6, 6, 134);
+}
+
+.purchase-cart-view p{
+    font-weight: 600;
+    font-size: 20px;
+    text-align: center;
+}
+
+.purchase-actions h4{
+    font-weight: 900;
+    color: rgb(9, 9, 145);
+}
+
+
+.cart-table{
+    overflow-x: scroll;
+}
+
+.cart-table table td, th{
+    border: 2px solid white;
+}
+
+.cart-table thead{
+    background-color: rgb(6, 6, 77);
+    color: white;
+}
+
+.cart-table tbody tr{
+    background-color: rgb(35, 33, 53);
+    color: white;
+}
+
+#confirm-purchase{
+    background-color: rgb(16, 16, 78);
+    color: white;
+}
+
+#confirm-purchase:hover{
+    background-color: blue;
+}

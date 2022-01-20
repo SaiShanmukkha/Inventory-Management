@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - CloudCart</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/css/icon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    @await RenderSectionAsync("Styles", required: false)
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+            <span class="material-icons icon">wb_cloudy</span>
+            <span class="logo-name">CloudCart</span>
+        </div>
+        <ul class="nav-items">
+            <li>
+                <a asp-area="" asp-controller="Dashboard" asp-action="Index">
+                    <span class="material-icons icon">space_dashboard</span>
+                    <span class="link-name">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a asp-area="" asp-controller="Item" asp-action="Index">
+                    <span class="material-icons icon">add_shopping_cart</span>
+                    <span class="link-name">Items</span>
+                </a>
+            </li>
+            <li>
+                <a asp-area="" asp-controller="Supplier" asp-action="Index">
+                    <span class="material-icons icon">local_shipping</span>
+                    <span class="link-name">Suppliers</span>
+                </a>
+            </li>
+            <li>
+                <a asp-area="" asp-controller="Sell" asp-action="Index">
+                    <span class="material-icons icon">sell</span>
+                    <span class="link-name">Sell Items</span>
+                </a>
+            </li>
+            <li>
+                <a asp-area="" asp-controller="Purchase" asp-action="Index">
+                    <span class="material-icons icon">shopping_cart</span>
+                    <span class="link-name">Purchase Items</span>
+                </a>
+            </li>            
+            <li>
+                <a asp-area="" asp-controller="Stocks" asp-action="Index">
+                    <span class="material-icons icon">inventory_2</span>
+                    <span class="link-name">Stocks</span>
+                </a>
+            </li>
+            <li>
+                <a asp-area="" asp-controller="Home" asp-action="Privacy">
+                    <span class="material-icons icon">favorite</span>
+                    <span class="link-name">Favorites</span>
+                </a>
+            </li>
+            <li>
+                <a asp-area="" asp-controller="Home" asp-action="Privacy">
+                    <span class="material-icons icon">analytics</span>
+                    <span class="link-name">Analytics</span>
+                </a>
+            </li>
+            <li>
+                <a asp-area="" asp-controller="Home" asp-action="Privacy">
+                    <span class="material-icons icon">people</span>
+                    <span class="link-name">Users</span>
+                </a>
+            </li>
+            <li>
+                <a asp-area="" asp-controller="Home" asp-action="Privacy">
+                    <span class="material-icons icon">policy</span>
+                    <span class="link-name">Privacy Policy</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- section:Main-Screen -->
+
+    <div class="main-section">
+        <nav>
+            <div class="sidebar-button">
+                <span class="material-icons icon" id="btn">menu_open</span>
+                <span class="screen-name">@ViewData["Title"]</span>
+            </div>
+            @*<div class="search-box">
+                <input type="text" placeholder="Search..." />
+                <span class="material-icons nav-search">search</span>
+            </div>
+            <div class="profile-details">
+                <img src="https://picsum.photos/200" />
+                <span class="material-icons profile-menu-icon">expand_more</span>
+            </div>*@
+        </nav>
+
+        <div class="main-content">
+            <!-- Page Data Rendered Here -->
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+    <section class="home-section">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </section>
+
+
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/notify.min.js"></script>
+    <script src="~/js/chart.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/jquery.redirect.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+
+
+</body>
+
+</html>

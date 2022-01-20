@@ -1,0 +1,64 @@
+﻿.Item-content h2{
+    color: rgb(7, 8, 56);
+    font-weight: 900;
+    font-size: 30px;
+}
+
+
+/* Stat - overview Styling */
+
+.stat-overview{
+    background-color: rgb(236, 232, 232);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+
+.stat-block{
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 10px;    
+    margin: 10px;
+    text-align: center;  
+    justify-content: center;
+    border-radius: 12px;
+}
+
+@media only screen and (max-width: 600px) {
+    .stat-block{
+        width: calc(100% - 40px);
+        overflow-x: hidden;
+    }
+}
+
+@media only screen and (max-width: 1078px) and (min-width: 600px){
+    .stat-block{
+        width: calc(100%/2 - 40px);
+        overflow-x: hidden;
+    }
+}
+
+@media only screen and (min-width: 1078px){
+    .stat-block{
+        width: calc(100%/4 - 80px);
+        overflow-x: hidden;
+    }
+}
+
+.stat-title{
+    margin: 20px;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.stat-data{
+    color: black;
+    margin: 10px;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+
+
